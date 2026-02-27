@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSONata Playground</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2em;
+        background: #f9f9f9;
+      }
+      textarea {
+        width: 100%;
+        min-height: 120px;
+        margin-bottom: 1em;
+      }
+      input,
+      button {
+        font-size: 1em;
+      }
+      .result,
+      .error {
+        margin-top: 1em;
+        padding: 1em;
+        border-radius: 4px;
+      }
+      .result {
+        background: #e6ffe6;
+      }
+      .error {
+        background: #ffe6e6;
+        color: #a00;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JSONata Playground</h1>
+    <label>JSON Input:</label><br />
+    <textarea id="json-input" placeholder="Paste your JSON here..."></textarea
+    ><br />
+    <input type="file" id="file-input" accept="application/json" /><br /><br />
+    <label>JSONata Query:</label><br />
+    <textarea
+      id="query-input"
+      placeholder="Enter your JSONata query..."
+    ></textarea
+    ><br />
+    <button id="run-btn">Run Query</button>
+    <div id="output"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
+

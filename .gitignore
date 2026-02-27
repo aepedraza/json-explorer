@@ -1,0 +1,31 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Logs
+npm-debug.log*
+yarn-error.log
+*.log
+
+# Environment variables
+.env
+
+# System files
+.DS_Store
+
+# Build output
+/dist/
+/build/
+
+# Test coverage
+/coverage/
+
+# Editor settings (optional)
+.vscode/
+.idea/
+
+# Temporary files
+tmp/
+temp/
+
+# The above patterns ignore dependencies, logs, environment variables, system files, build output, test coverage, editor settings, and temporary files for a typical Node.js Express.js project.
