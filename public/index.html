@@ -3,51 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JSONata Playground</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 2em;
-        background: #f9f9f9;
-      }
-      textarea {
-        width: 100%;
-        min-height: 120px;
-        margin-bottom: 1em;
-      }
-      input,
-      button {
-        font-size: 1em;
-      }
-      .result,
-      .error {
-        margin-top: 1em;
-        padding: 1em;
-        border-radius: 4px;
-      }
-      .result {
-        background: #e6ffe6;
-      }
-      .error {
-        background: #ffe6e6;
-        color: #a00;
-      }
-    </style>
+    <title>JSON Explorer</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>JSONata Playground</h1>
-    <label>JSON Input:</label><br />
-    <textarea id="json-input" placeholder="Paste your JSON here..."></textarea
-    ><br />
-    <input type="file" id="file-input" accept="application/json" /><br /><br />
-    <label>JSONata Query:</label><br />
-    <textarea
-      id="query-input"
-      placeholder="Enter your JSONata query..."
-    ></textarea
-    ><br />
-    <button id="run-btn">Run Query</button>
-    <div id="output"></div>
+    <div id="app-container">
+      <main>
+        <h1>JSON Explorer</h1>
+        <label>JSON Input:</label><br />
+        <textarea
+          id="json-input"
+          placeholder="Paste your JSON here..."
+        ></textarea
+        ><br />
+        <input
+          type="file"
+          id="file-input"
+          accept="application/json"
+        /><br /><br />
+        <label>JSONata Query:</label><br />
+        <textarea
+          id="query-input"
+          placeholder="Enter your JSONata query..."
+        ></textarea
+        ><br />
+        <button id="run-btn">Run Query</button>
+        <div id="output"></div>
+      </main>
+    </div>
+    <footer>
+      <hr />
+      <p>
+        Powered by
+        <a href="https://expressjs.com/" target="_blank" rel="noopener"
+          >Express</a
+        >
+        and
+        <a href="https://jsonata.org/" target="_blank" rel="noopener">
+          JSONata
+        </a>
+        (<a
+          href="https://docs.jsonata.org/overview"
+          target="_blank"
+          rel="noopener"
+          >documentation</a
+        >) .<br />
+        <em>Disclaimer:</em> This project uses JSONata to explore and analyze
+        JSON files.
+      </p>
+    </footer>
     <script src="app.js"></script>
   </body>
 </html>
