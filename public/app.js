@@ -8,7 +8,15 @@ document.getElementById("file-input").addEventListener("change", function (e) {
   reader.readAsText(file);
 });
 
-document.getElementById("run-btn").addEventListener("click", async function () {
+function debounce(fn, delay) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+async function runQuery() {
   const jsonText = document.getElementById("json-input").value;
   const query = document.getElementById("query-input").value;
   let json;
@@ -33,7 +41,13 @@ document.getElementById("run-btn").addEventListener("click", async function () {
   } catch (err) {
     showError("Request failed: " + err.message);
   }
-});
+}
+
+const debouncedRunQuery = debounce(runQuery, 3000);
+
+document
+  .getElementById("query-input")
+  .addEventListener("input", debouncedRunQuery);
 
 function showResult(result) {
   document.getElementById("output").innerHTML =
@@ -44,4 +58,3 @@ function showError(error) {
   document.getElementById("output").innerHTML =
     '<pre class="error">' + error + "</pre>";
 }
-
