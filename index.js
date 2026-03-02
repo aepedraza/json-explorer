@@ -3,7 +3,7 @@ const jsonata = require("jsonata");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+app.use(express.json({ limit: "25mb" }));
 app.use(express.static("public"));
 
 app.post("/api/jsonata", async (req, res) => {
